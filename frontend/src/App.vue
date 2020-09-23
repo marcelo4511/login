@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <div id="nav" v-show="isLogged">
+    <div id="nav">
       <router-link to="/sobre" tag="span" v-show="isLogged">Sobre</router-link>
-      <router-link to="/" tag="span">Home</router-link>
-      <p v-for="(u,k) in user" :key="k">{{u.name}}</p>
+      <router-link to="/" tag="span" v-show="!isLogged">Home</router-link>
+      <router-link to="/login" v-show="!isLogged">Login</router-link>
+      <span v-for="(u,k) in user" :key="k" v-show="!isLogged">loggin</span>
+       <span v-for="(u,k) in user" :key="k" v-show="isLogged">{{u.name}}</span>
       <button @click="logout()" tag="span" v-show="isLogged">Sair</button>
     </div>
 
-    <div id="aside" v-show="isLogged">
-      <aside></aside>
-    </div>
+    
    <Nav/>
     <router-view/>
   </div>
@@ -67,8 +67,17 @@ export default {
   justify-content: flex-end;
 }
 
-#nav span,p{
+#nav span{
   cursor: pointer;
   color:cornsilk;
+  margin: 10px;
+}
+
+#nav button {
+  margin-right: 10px;
+  width: 50px;
+  background-color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
 }
 </style>

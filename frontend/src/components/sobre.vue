@@ -46,5 +46,7 @@ export default {
 </script>
 
 <style>
-
+  p{
+    color: black;
+  }
 </style>
