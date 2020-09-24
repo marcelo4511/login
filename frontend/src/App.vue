@@ -3,10 +3,14 @@
     <div id="nav">
       <router-link to="/sobre" tag="span" v-show="isLogged">Sobre</router-link>
       <router-link to="/" tag="span" v-show="!isLogged">Home</router-link>
-      <router-link to="/login" v-show="!isLogged">Login</router-link>
-      <span v-for="(u,k) in user" :key="k" v-show="!isLogged">loggin</span>
-       <span v-for="(u,k) in user" :key="k" v-show="isLogged">{{u.name}}</span>
-      <button @click="logout()" tag="span" v-show="isLogged">Sair</button>
+      <router-link to="/login" tag="span" v-show="!isLogged">Login</router-link>
+        <md-menu md-align-trigger>
+          <md-button class="button" md-menu-trigger> <span v-for="(u,k) in user" :key="k" v-show="isLogged">{{u.name}}</span></md-button>
+
+          <md-menu-content>
+            <md-menu-item @click="logout()" tag="span" v-show="isLogged">Sair</md-menu-item>
+          </md-menu-content>
+    </md-menu>
     </div>
 
     
@@ -79,5 +83,9 @@ export default {
   background-color: #fff;
   border-radius: 3px;
   cursor: pointer;
+}
+
+#nav button{
+  background-color: blueviolet;
 }
 </style>

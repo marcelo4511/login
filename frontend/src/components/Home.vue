@@ -1,7 +1,7 @@
 <template>
-  <div>
-      <h1>Bem vindooooooooo</h1>
-      <router-link to='/login'>login</router-link>
+  <div class="home">
+      <h1>Bem vindoooo sistema de login </h1><br>
+      <md-button class="md-raised md-primary"><router-link to='/login' tag="span">login</router-link></md-button>
   </div>
 </template>
 
@@ -12,5 +12,11 @@ export default {
 </script>
 
 <style>
-
+ .home{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 300px;
+   flex-direction: column;
+ }
 </style>

@@ -2,9 +2,9 @@ import axios from 'axios'
 
 const login = ({commit},credentials) => {
     return axios.post('http://localhost:8000/api/login',credentials)
-                    .then(({data}) => {
-                        commit('setUserData',data)
-                    })
+          .then(({data}) => {
+            commit('setUserData',data)
+        })
 }
 
 const logout = ({commit}) => {

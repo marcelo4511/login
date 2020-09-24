@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="login">
     <form class="md-layout teste" @submit.prevent="login">
                 <md-card-header>
                 </md-card-header>
@@ -11,13 +11,17 @@
                 </div>
                   <div class="md-layout md-gutter">
                      <div class="md-layout-item md-small-size-100">
-                        <label class="label" for="email">Email</label><br>
-                        <md-input type="email" name="email" v-model="email" class="aaa" required/><br>
+                        <md-field>
+                        <label>Email</label>
+                        <md-input v-model="email" class="aaa" required></md-input>
+                        </md-field>
                      </div>
                  
                      <div class="md-layout-item md-small-size-100">
-                        <label class="label" for="password">Senha</label><br>
-                        <md-input type="password" name="password" class="aaa" v-model="password" required/>
+                       <md-field>
+                        <label>Senha</label>
+                        <md-input type="password" v-model="password" class="aaa" required></md-input>
+                        </md-field>
                      </div>
                      <div class="md-layout-item md-small-size-100 teste1">
                         <md-button type="submit" class="md-raised md-primary" >Entrar</md-button>
@@ -75,7 +79,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin-left: 50px;
+        margin-left: 30px;
         margin-top: 20px;
     }
 
@@ -85,5 +89,9 @@ export default {
         justify-content: flex-start;
         margin-left: 70px;
         margin-top: 10px;
+    }
+
+    .login{
+        margin-top: 150px;
     }
 </style>
